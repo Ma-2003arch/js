@@ -8,6 +8,7 @@ use App\Http\Controllers\ProgramsController;
 use App\Http\Controllers\TontineController;
 use App\Http\Controllers\ParticipantsController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\ContactController;
 
 
 Route::get('/', function () {
@@ -23,7 +24,7 @@ Route::get('/about', function () {
 })->name('about');
 
 Route::get('/contact', function () {
-    return view('Contact');
+    return view('Contact-create');
 })->name('contact');
 
 Route::get('/articles', [ArticleController::class, 'index'])->name('article-create');
@@ -40,3 +41,10 @@ Route::get('/participant/create', [ParticipantsController::class, 'create'])->na
 Route::post('/participant', [ParticipantsController::class, 'store'])->name('participant.store');
 Route::get('/users', [UsersController::class, 'index'])->name('user-create');
 
+
+
+Route::get('/contact', [ContactController::class, 'create'])
+    ->name('Contact-create');
+
+Route::post('/contact', [ContactController::class, 'store'])
+    ->name('contact.store');

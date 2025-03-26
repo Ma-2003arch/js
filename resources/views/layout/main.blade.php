@@ -137,7 +137,7 @@
                         <a class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">À propos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('article-create') ? 'active' : '' }}" href="{{ route('article-create') }}">Nos articles</a>
+                        <a class="nav-link {{ request()->routeIs('contact-create') ? 'active' : '' }}" href="{{ route('Contact-create') }}">Contactez-nous</a>
                     </li>
                 </ul>
             </div>
@@ -145,7 +145,9 @@
     </nav>
    
    
-    
+    <div class="">
+        @yield("banner")
+    </div>
     <!-- Contenu principal -->
     <div class="container my-5">
         @yield("content")
